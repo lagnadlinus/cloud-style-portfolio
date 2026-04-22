@@ -1,0 +1,476 @@
+<!-- This is a static personal cloud portfolio built for deployment to Alibaba Cloud OSS using only HTML, CSS, and JavaScript. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Sunil Dangal - a static student cloud portfolio designed for Alibaba Cloud OSS deployment.">
+  <title>Sunil Dangal | Cloud Portfolio</title>
+  <link rel="stylesheet" href="style.css?v=20260421-2">
+</head>
+
+<body>
+  <div class="app-shell">
+    <div class="background-system" aria-hidden="true">
+      <div class="grid-layer"></div>
+      <div class="architecture-board">
+        <svg class="bg-map" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <g class="bg-continent">
+            <path
+              d="M112 126c35-26 94-37 132-15 31 18 39 47 27 73-11 22-34 34-51 54-22 27-23 56-8 92 12 27 14 56-6 75-24 22-65 15-90-7-29-26-34-67-20-99 10-24 10-42-7-61-35-38-24-83 23-112z" />
+            <path
+              d="M237 376c28-12 51-3 64 18 13 23 10 52-7 73-18 23-46 42-42 73 2 19-12 34-32 32-23-2-38-24-37-47 1-39 22-66 34-96 7-18 2-35 20-53z" />
+            <path
+              d="M530 120c33-18 84-12 111 12 16 15 18 34 7 52-10 16-29 24-42 38-10 10-10 25 2 35 18 15 49 17 58 40 10 27-16 58-47 67-35 10-75-1-97-27-25-29-28-65-10-95 10-16 9-28-3-45-16-24-8-57 21-77z" />
+            <path
+              d="M564 296c34-23 86-24 120-1 23 16 31 44 20 69-12 28-42 43-55 70-11 23-4 52 8 79 12 28 21 63 1 89-20 26-58 33-89 24-37-11-64-43-70-81-7-40 8-76 23-112 11-25 12-49 0-75-14-31 6-51 42-62z" />
+            <path
+              d="M705 132c61-33 163-30 226 11 48 31 58 82 28 122-23 31-67 43-95 70-19 18-20 41-2 58 25 22 67 29 79 61 14 36-20 72-61 84-54 15-118 9-162-18-41-26-67-70-65-118 1-36 17-62 8-97-13-49 1-97 44-127z" />
+            <path
+              d="M906 236c34 6 63 28 75 55 10 24 6 54-15 69-19 14-50 14-71 3-23-12-34-37-32-62 2-21 12-38 16-58 4-17 11-23 27-19z" />
+            <path
+              d="M929 486c43-19 104-10 136 21 25 24 27 58 3 80-26 25-68 34-107 30-37-4-76-25-83-58-7-32 18-58 51-73z" />
+          </g>
+        </svg>
+        <div class="glow-orb glow-orb-sun"></div>
+        <div class="glow-orb glow-orb-nil"></div>
+        <div class="diagram-frame" aria-hidden="true"></div>
+        <div class="architecture-diagram" aria-hidden="true">
+          <div class="diagram-title-chip">Alibaba Cloud Static Delivery Map</div>
+          <svg class="diagram-network" viewBox="0 0 100 100" preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <path id="diagram-route" d="M14 14 C 28 30, 48 56, 82 88" />
+              <linearGradient id="diagram-route-gradient" x1="14%" y1="14%" x2="82%" y2="88%">
+                <stop offset="0%" stop-color="#ff9a52" />
+                <stop offset="55%" stop-color="#6fd7ff" />
+                <stop offset="100%" stop-color="#c79cff" />
+              </linearGradient>
+            </defs>
+            <path class="diagram-route-shadow" d="M14 14 C 28 30, 48 56, 82 88" />
+            <path class="diagram-route-line" d="M14 14 C 28 30, 48 56, 82 88" />
+
+            <circle class="diagram-pulse diagram-pulse-orange" r="1.35">
+              <animateMotion dur="4.6s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#diagram-route" xlink:href="#diagram-route"></mpath>
+              </animateMotion>
+            </circle>
+            <circle class="diagram-pulse diagram-pulse-blue" r="1.25">
+              <animateMotion dur="5.1s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#diagram-route" xlink:href="#diagram-route"></mpath>
+              </animateMotion>
+            </circle>
+            <circle class="diagram-pulse diagram-pulse-purple" r="1.1">
+              <animateMotion dur="5.8s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#diagram-route" xlink:href="#diagram-route"></mpath>
+              </animateMotion>
+            </circle>
+          </svg>
+
+          <div class="diagram-node diagram-node-china" aria-label="China data centre">
+            <span class="diagram-node-shell">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="6" y="4" width="12" height="5" rx="1.5"></rect>
+                <rect x="6" y="10" width="12" height="5" rx="1.5"></rect>
+                <rect x="6" y="16" width="12" height="4" rx="1.5"></rect>
+                <circle cx="9" cy="6.5" r="0.9"></circle>
+                <circle cx="9" cy="12.5" r="0.9"></circle>
+                <circle cx="9" cy="18" r="0.9"></circle>
+              </svg>
+            </span>
+            <span class="diagram-node-meta">
+              <span class="diagram-node-label">China DC</span>
+              <span class="diagram-node-value">Primary Data Centre</span>
+            </span>
+          </div>
+
+          <div class="diagram-node diagram-node-jakarta" aria-label="Indonesia availability zones data centre">
+            <span class="diagram-az-orbit diagram-az-orbit-outer"></span>
+            <span class="diagram-az-orbit diagram-az-orbit-inner"></span>
+            <span class="diagram-az-dot diagram-az-dot-a"></span>
+            <span class="diagram-az-dot diagram-az-dot-b"></span>
+            <span class="diagram-az-dot diagram-az-dot-c"></span>
+            <span class="diagram-node-shell">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="5" y="5" width="5" height="5" rx="1.2"></rect>
+                <rect x="14" y="5" width="5" height="5" rx="1.2"></rect>
+                <rect x="5" y="14" width="5" height="5" rx="1.2"></rect>
+                <rect x="14" y="14" width="5" height="5" rx="1.2"></rect>
+              </svg>
+            </span>
+            <span class="diagram-node-meta">
+              <span class="diagram-node-label">Indonesia Server</span>
+              <span class="diagram-node-value">3 AZ Active</span>
+            </span>
+          </div>
+
+          <div class="diagram-node diagram-node-sydney" aria-label="Sydney edge cache location">
+            <span class="diagram-node-shell">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 20c3.2-4.1 5-6.9 5-9.4A5 5 0 0 0 7 10.6c0 2.5 1.8 5.3 5 9.4Z"></path>
+                <circle cx="12" cy="10.5" r="1.8"></circle>
+              </svg>
+            </span>
+            <span class="diagram-node-meta">
+              <span class="diagram-node-label">Sydney Edge Cache</span>
+              <span class="diagram-node-value">Location Cache</span>
+            </span>
+          </div>
+
+          <div class="diagram-node diagram-node-user" aria-label="End user">
+            <span class="diagram-node-shell">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="8.2" r="3.1"></circle>
+                <path d="M6.5 19c1.4-3 3.4-4.5 5.5-4.5s4.1 1.5 5.5 4.5"></path>
+              </svg>
+            </span>
+            <span class="diagram-node-meta">
+              <span class="diagram-node-label">Tasmania End User</span>
+              <span class="diagram-node-value">Client Endpoint</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="particle-field" id="particleField"></div>
+    </div>
+
+    <header class="topbar">
+      <div class="window-dots" aria-label="Window controls">
+        <button class="dot dot-close" id="windowCloseControl" type="button" aria-label="Hide explorer panel"></button>
+        <button class="dot dot-minimize" id="windowMinimizeControl" type="button"
+          aria-label="Toggle minimal board mode"></button>
+        <button class="dot dot-maximize" id="windowMaximizeControl" type="button"
+          aria-label="Toggle focused stage mode"></button>
+      </div>
+
+      <div class="topbar-title">Sunil Dangal | Cloud Student | AI Software Engineer</div>
+
+      <div class="topbar-actions">
+        <div class="clock-chip" id="clockChip">--:--:--</div>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="explorerPanel">
+          <span class="menu-toggle-icon" aria-hidden="true"></span>
+          <span>Menu</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="explorer-panel" id="explorerPanel" aria-label="Explorer">
+        <div class="explorer-head">
+          <div>
+            <p>Explorer</p>
+            <small>Simple portfolio files</small>
+          </div>
+          <button class="explorer-close" id="explorerClose" type="button" aria-label="Close explorer">×</button>
+        </div>
+
+        <div class="profile-mini">
+          <img src="profile.jpg?v=20260421-2" alt="Portrait of Sunil Dangal">
+          <div>
+            <strong>Sunil Dangal</strong>
+            <span>Cloud Student / AI Software Engineer / AWS Learner</span>
+          </div>
+        </div>
+
+        <nav class="file-list" aria-label="Portfolio content">
+          <button class="file-item" data-panel="about">
+            <span class="file-icon">○</span>
+            <span>about.md</span>
+          </button>
+          <button class="file-item" data-panel="skills">
+            <span class="file-icon">□</span>
+            <span>skills.json</span>
+          </button>
+          <button class="file-item" data-panel="projects">
+            <span class="file-icon">◇</span>
+            <span>projects.yaml</span>
+          </button>
+          <button class="file-item" data-panel="certifications">
+            <span class="file-icon">△</span>
+            <span>certs.log</span>
+          </button>
+          <button class="file-item" data-panel="contact">
+            <span class="file-icon">↗</span>
+            <span>contact.sh</span>
+          </button>
+        </nav>
+
+        <div class="panel-group">
+          <p class="section-label">Active</p>
+          <button class="file-item file-item-terminal" data-panel="terminal">
+            <span class="file-icon file-icon-terminal">&gt;_</span>
+            <span>terminal.exe</span>
+          </button>
+          <button class="file-item file-item-quiz" data-command="aws-quiz">
+            <span class="file-icon file-icon-quiz">◈</span>
+            <span>aws-saa-quiz.exe</span>
+          </button>
+        </div>
+
+        <div class="explorer-foot">
+          <div class="social-mini" aria-label="Professional links">
+            <a href="https://www.linkedin.com/in/sunildangal/" target="_blank" rel="noreferrer noopener"
+              aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M6.94 8.5v8.56H4.09V8.5h2.85Zm.19-2.65c0 .82-.61 1.47-1.61 1.47h-.02c-.96 0-1.58-.65-1.58-1.47 0-.84.64-1.48 1.62-1.48s1.57.64 1.59 1.48ZM19.91 12.15v4.91h-2.84v-4.58c0-1.15-.41-1.94-1.44-1.94-.78 0-1.25.53-1.46 1.04-.08.18-.09.43-.09.68v4.8h-2.84s.04-7.79 0-8.56h2.84v1.21c.38-.58 1.06-1.4 2.58-1.4 1.89 0 3.29 1.23 3.29 3.84Z" />
+              </svg>
+            </a>
+            <a href="https://github.com/lagnadlinus" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.31 6.84 9.66.5.09.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.05 0-1.11.39-2.01 1.03-2.72-.11-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.04A9.33 9.33 0 0 1 12 6.84c.85 0 1.7.12 2.49.35 1.9-1.31 2.74-1.04 2.74-1.04.55 1.42.21 2.47.11 2.73.64.71 1.03 1.61 1.03 2.72 0 3.92-2.35 4.79-4.59 5.04.36.32.69.95.69 1.93 0 1.39-.01 2.5-.01 2.84 0 .27.18.59.69.49A10.25 10.25 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z" />
+              </svg>
+            </a>
+          </div>
+          <span>Created by Sunil</span>
+          <span>Static cloud portfolio</span>
+        </div>
+      </aside>
+
+      <section class="map-stage" aria-label="Cloud map stage">
+        <button class="terminal-fab" id="terminalFab" type="button" aria-label="Open terminal window">
+          &gt;_
+        </button>
+      </section>
+    </main>
+
+    <div class="window-overlay" id="windowOverlay" hidden>
+      <section class="content-window" id="contentWindow" role="dialog" aria-modal="true" aria-labelledby="windowTitle">
+        <header class="window-header">
+          <button class="back-window" id="backToTerminal" type="button" aria-label="Back to terminal" hidden>
+            &larr; Terminal
+          </button>
+          <div class="window-title-group">
+            <span class="window-icon" id="windowIcon">○</span>
+            <h2 id="windowTitle">about.md</h2>
+          </div>
+          <button class="close-window" id="closeWindow" type="button" aria-label="Close window">×</button>
+        </header>
+
+        <div class="window-body" id="windowBody">
+          <div class="content-panel" data-content="about">
+            <div class="content-hero">
+              <div class="content-badge">&gt;_</div>
+              <div>
+                <p class="eyebrow">Identity registry</p>
+                <h3>About Sunil</h3>
+                <p>
+                  I am an AI Software Engineer, cloud learner, full-stack developer, and AWS learner with a Bachelor of
+                  Information Systems and ongoing Information Technology studies. I build responsive web applications,
+                  work across React and Python/Django stacks, and keep expanding my cloud, AI, and deployment skills
+                  through real projects.
+                </p>
+              </div>
+            </div>
+
+            <div class="info-grid">
+              <article class="info-card">
+                <span class="micro-label">Focus</span>
+                <strong>Cloud & AI engineering</strong>
+                <p>Learning AWS, cloud deployment patterns, AI-assisted workflows, and production-ready project
+                  delivery.</p>
+              </article>
+              <article class="info-card">
+                <span class="micro-label">Front-end</span>
+                <strong>Full-stack product building</strong>
+                <p>Building responsive applications with React, TypeScript, Django, Node.js, and modern UI tooling.</p>
+              </article>
+              <article class="info-card">
+                <span class="micro-label">Direction</span>
+                <strong>Real-world delivery</strong>
+                <p>Shipping live client and portfolio projects across AWS, Vercel, Render, and static hosting platforms.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="content-panel" data-content="skills">
+            <p class="eyebrow">skills.json</p>
+            <h3>Current Learning Stack</h3>
+            <div class="tag-board">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Tailwind CSS</span>
+              <span>Python</span>
+              <span>Django</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>AWS</span>
+              <span>Azure</span>
+              <span>AI Tools</span>
+              <span>Git / GitHub</span>
+            </div>
+            <div class="info-grid">
+              <article class="info-card">
+                <span class="micro-label">UI</span>
+                <strong>React / TypeScript / Tailwind</strong>
+                <p>Building modern responsive front-end interfaces with strong layout, motion, and usability focus.</p>
+              </article>
+              <article class="info-card">
+                <span class="micro-label">Backend</span>
+                <strong>Python / Django / Node.js</strong>
+                <p>Working with full-stack application structure, authentication basics, APIs, and deployment workflows.
+                </p>
+              </article>
+              <article class="info-card">
+                <span class="micro-label">Cloud</span>
+                <strong>AWS / Azure / Vercel / Render</strong>
+                <p>Deploying live projects and strengthening cloud fundamentals with an AWS SAA path in progress.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="content-panel" data-content="projects">
+            <p class="eyebrow">projects.yaml</p>
+            <h3>Project Files</h3>
+            <div class="stack-list">
+              <article class="stack-card">
+                <strong>Concreting and Landscaping Business Website</strong>
+                <p>Modern responsive business site built with React, Tailwind CSS, and GSAP for real client use.</p>
+                <a href="https://www.nilarcvision.com.au" target="_blank" rel="noreferrer noopener">Live project</a>
+              </article>
+              <article class="stack-card">
+                <strong>Herba Wanders E-Commerce Platform</strong>
+                <p>Full-stack Django e-commerce experience with authentication, product flows, cart handling, and a
+                  separate React frontend.</p>
+                <a href="https://herba-wanders-demo.onrender.com/" target="_blank" rel="noreferrer noopener">Backend
+                  demo</a>
+              </article>
+              <article class="stack-card">
+                <strong>Herba Wanders Frontend</strong>
+                <p>React and TypeScript frontend focused on performance, responsive design, and modern user experience.
+                </p>
+                <a href="https://herba-wanders-frontend.vercel.app/" target="_blank" rel="noreferrer noopener">Frontend
+                  demo</a>
+              </article>
+              <article class="stack-card">
+                <strong>Choden Brothers Services Website</strong>
+                <p>Responsive company website delivered from requirements through deployment using React and Tailwind
+                  CSS.</p>
+                <a href="https://chodenbrothersservices.com.au" target="_blank" rel="noreferrer noopener">Live
+                  project</a>
+              </article>
+              <article class="stack-card">
+                <strong>Open Gov Data Visualisation Dashboard</strong>
+                <p>Interactive dashboard built around open datasets with a focus on visual presentation and data-driven
+                  UI.</p>
+                <a href="https://github.com/lagnadlinus/open_gov_data_visualisation" target="_blank"
+                  rel="noreferrer noopener">Live
+                  project</a>
+              </article>
+              <article class="stack-card">
+                <strong>3D Solar System Simulation</strong>
+                <p>Interactive 3D browser simulation built with Babylon.js and custom user interaction effects.</p>
+                <a href="https://lagnadlinus.github.io/3D-Solar-System-/" target="_blank" rel="noreferrer noopener">Live
+                  project</a>
+              </article>
+            </div>
+          </div>
+
+          <div class="content-panel" data-content="certifications">
+            <p class="eyebrow">certs.log</p>
+            <h3>Certifications & Coursework</h3>
+            <div class="stack-list">
+              <article class="stack-card">
+                <strong>AWS SAA</strong>
+                <p>Certification path currently in progress as part of ongoing cloud learning and deployment study.</p>
+              </article>
+              <article class="stack-card">
+                <strong>Django Web Applications — Zenva</strong>
+                <p>Hands-on training focused on Python, Django application structure, and web app delivery.</p>
+              </article>
+              <article class="stack-card">
+                <strong>Full-Stack Development / Front-End Development — Mimo</strong>
+                <p>Practical learning focused on modern web development foundations and full-stack workflows.</p>
+              </article>
+              <article class="stack-card">
+                <strong>Python AI Development — Mimo</strong>
+                <p>Coursework supporting continued movement toward AI software engineering and Python-based development.
+                </p>
+              </article>
+              <article class="stack-card">
+                <strong>Learning SharePoint Online — LinkedIn Learning</strong>
+                <p>Additional productivity and platform learning aligned with broader IT and enterprise support
+                  experience.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="content-panel" data-content="contact">
+            <p class="eyebrow">contact.sh</p>
+            <h3>Professional Links</h3>
+            <div class="stack-list">
+              <a class="contact-card" href="mailto:dangalsunil@gmail.com">
+                <strong>Email</strong>
+                <p>dangalsunil@gmail.com</p>
+              </a>
+              <a class="contact-card" href="https://www.linkedin.com/in/sunildangal/" target="_blank"
+                rel="noreferrer noopener">
+                <strong>LinkedIn</strong>
+                <p>Connect professionally and view profile updates.</p>
+              </a>
+              <a class="contact-card" href="https://github.com/lagnadlinus" target="_blank" rel="noreferrer noopener">
+                <strong>GitHub</strong>
+                <p>Browse repositories, portfolio work, and learning projects.</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="content-panel content-panel-terminal" data-content="terminal">
+            <div class="terminal-window">
+              <div class="terminal-toolbar">
+                <span class="term-dot term-dot-close"></span>
+                <span class="term-dot term-dot-minimize"></span>
+                <span class="term-dot term-dot-maximize"></span>
+                <strong>zsh — visitor@sunildangal-portfolio</strong>
+              </div>
+
+              <div class="terminal-output" id="terminalOutput" role="log" aria-live="polite"></div>
+
+              <form class="terminal-input-bar" id="terminalForm" autocomplete="off">
+                <label class="terminal-prompt" for="terminalInput">visitor@sunildangal:~$</label>
+                <input id="terminalInput" class="terminal-input" name="terminal" type="text" spellcheck="false"
+                  placeholder="try: help, ls, pwd, whoami, ping jakarta-cdn, speedcheck, about"
+                  aria-label="Terminal command input">
+              </form>
+
+              <div class="terminal-commands">
+                <button type="button" class="terminal-chip" data-command="help">help</button>
+                <button type="button" class="terminal-chip" data-command="whoami">whoami</button>
+                <button type="button" class="terminal-chip" data-command="about">about</button>
+                <button type="button" class="terminal-chip" data-command="skills">skills</button>
+                <button type="button" class="terminal-chip" data-command="projects">projects</button>
+                <button type="button" class="terminal-chip" data-command="certs">certs</button>
+                <button type="button" class="terminal-chip" data-command="cloud">cloud</button>
+                <button type="button" class="terminal-chip" data-command="contact">contact</button>
+                <button type="button" class="terminal-chip" data-command="aws-quiz">aws-quiz</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="window-footer">
+          <span id="footerStatus">WRITABLE</span>
+          <div class="window-switcher" aria-label="Panel switcher">
+            <button class="window-switch-button" type="button" data-panel-switch="about">about</button>
+            <button class="window-switch-button" type="button" data-panel-switch="skills">skills</button>
+            <button class="window-switch-button" type="button" data-panel-switch="projects">projects</button>
+            <button class="window-switch-button" type="button" data-panel-switch="certifications">certs</button>
+            <button class="window-switch-button" type="button" data-panel-switch="contact">contact</button>
+          </div>
+          <span id="footerFileName">about.md</span>
+        </footer>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js?v=20260421-2"></script>
+</body>
+
+</html>
