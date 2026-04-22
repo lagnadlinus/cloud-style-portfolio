@@ -89,7 +89,6 @@ flowchart LR
 - The live UI presents the delivery flow as a visual architecture board rather than a plain hero section.
 - The current implementation uses custom CSS and SVG-driven visual elements to simulate a cloud network path.
 - Alibaba service naming is reflected in the project structure and presentation.
-- If you want official Alibaba Cloud logos in the README later, the cleanest approach is to add approved PNG/SVG assets into the repo and reference them directly from Markdown.
 
 ---
 
