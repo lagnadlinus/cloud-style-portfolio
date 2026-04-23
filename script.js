@@ -5,14 +5,10 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const menuToggle = document.getElementById("menuToggle");
   const explorerClose = document.getElementById("explorerClose");
   const explorerPanel = document.getElementById("explorerPanel");
-  const windowCloseControl = document.getElementById("windowCloseControl");
-  const windowMinimizeControl = document.getElementById("windowMinimizeControl");
-  const windowMaximizeControl = document.getElementById("windowMaximizeControl");
   const fileButtons = Array.from(document.querySelectorAll(".file-item"));
   const terminalFab = document.getElementById("terminalFab");
   const windowOverlay = document.getElementById("windowOverlay");
@@ -20,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const backToTerminal = document.getElementById("backToTerminal");
   const windowTitle = document.getElementById("windowTitle");
   const windowIcon = document.getElementById("windowIcon");
-  const footerFileName = document.getElementById("footerFileName");
   const contentPanels = Array.from(document.querySelectorAll(".content-panel"));
   const terminalOutput = document.getElementById("terminalOutput");
   const terminalButtons = Array.from(document.querySelectorAll(".terminal-chip"));
@@ -28,9 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const windowSwitcher = document.querySelector(".window-switcher");
   const terminalForm = document.getElementById("terminalForm");
   const terminalInput = document.getElementById("terminalInput");
-  const particleField = document.getElementById("particleField");
   const clockChip = document.getElementById("clockChip");
-  const backgroundSystem = document.querySelector(".background-system");
   const terminalHistory = [];
   let awsQuizState = null;
   let backTargetPanel = "";
@@ -308,42 +301,6 @@ document.addEventListener("DOMContentLoaded", () => {
     clockChip.textContent = `${timeFormatter.format(now)} ${zoneName}`;
   }
 
-  function createParticles() {
-    if (prefersReducedMotion || !particleField) {
-      return;
-    }
-
-    const count = window.innerWidth < 768 ? 14 : 24;
-
-    for (let index = 0; index < count; index += 1) {
-      const particle = document.createElement("span");
-      particle.className = "particle";
-      particle.style.left = `${Math.random() * 100}%`;
-      particle.style.top = `${18 + Math.random() * 72}%`;
-      particle.style.animationDuration = `${7 + Math.random() * 8}s`;
-      particle.style.animationDelay = `${Math.random() * 6}s`;
-      particle.style.opacity = `${0.18 + Math.random() * 0.36}`;
-      particleField.appendChild(particle);
-    }
-  }
-
-  function spawnCyberTrail(x, y) {
-    if (prefersReducedMotion || !backgroundSystem) {
-      return;
-    }
-
-    const bit = document.createElement("span");
-    bit.className = "cyber-trail";
-    bit.textContent = Math.random() > 0.5 ? "1" : "0";
-    bit.style.setProperty("--x", `${x}px`);
-    bit.style.setProperty("--y", `${y}px`);
-    backgroundSystem.appendChild(bit);
-
-    window.setTimeout(() => {
-      bit.remove();
-    }, 1000);
-  }
-
   function setActiveButton(panelName) {
     fileButtons.forEach((button) => {
       button.classList.toggle("active", button.dataset.panel === panelName);
@@ -384,7 +341,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setActivePanel(panelName);
     windowTitle.textContent = meta.title;
     windowIcon.textContent = meta.icon;
-    footerFileName.textContent = meta.title;
     updateBackButton();
     windowOverlay.hidden = false;
     body.classList.add("window-open");
@@ -407,33 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setActivePanel("");
   }
 
-  function showSidebar() {
-    body.classList.remove("sidebar-hidden");
-  }
-
-  function hideSidebar() {
-    body.classList.add("sidebar-hidden");
-    closeMenu();
-  }
-
-  function toggleSidebarVisibility() {
-    const hidden = body.classList.toggle("sidebar-hidden");
-    if (hidden) {
-      closeMenu();
-    }
-  }
-
-  function noopWindowControl() {
-    if (document.activeElement instanceof HTMLElement) {
-      document.activeElement.blur();
-    }
-  }
-
   function toggleMenu() {
-    if (body.classList.contains("sidebar-hidden")) {
-      showSidebar();
-    }
-
     const isOpen = explorerPanel.classList.toggle("is-open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   }
@@ -441,6 +371,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeMenu() {
     explorerPanel.classList.remove("is-open");
     menuToggle.setAttribute("aria-expanded", "false");
+  }
+
+  function syncSidebarForViewport() {
+    const desktopLayout = window.matchMedia("(min-width: 981px)").matches;
+    const compactLayout = window.matchMedia("(max-width: 1280px) and (max-height: 760px) and (pointer: coarse)").matches
+      || window.matchMedia("(max-width: 980px)").matches;
+
+    if (desktopLayout || !compactLayout) {
+      closeMenu();
+    }
   }
 
   function appendTerminalLine(text, className) {
@@ -632,49 +572,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   updateClock();
-  createParticles();
-  window.setInterval(updateClock, 1000);
-
-  let lastTrailTime = 0;
-
-  window.addEventListener("mousemove", (event) => {
-    const now = Date.now();
-    if (now - lastTrailTime > 70) {
-      spawnCyberTrail(event.clientX, event.clientY);
-      lastTrailTime = now;
-    }
-  }, { passive: true });
-
-  window.addEventListener("touchmove", (event) => {
-    const touch = event.touches[0];
-    if (!touch) {
-      return;
-    }
-
-    const now = Date.now();
-    if (now - lastTrailTime > 90) {
-      spawnCyberTrail(touch.clientX, touch.clientY);
-      lastTrailTime = now;
-    }
-  }, { passive: true });
+  window.setInterval(updateClock, 60000);
 
   menuToggle.addEventListener("click", toggleMenu);
-
-  if (windowCloseControl) {
-    windowCloseControl.addEventListener("click", toggleSidebarVisibility);
-  }
-
-  if (windowMinimizeControl) {
-    windowMinimizeControl.addEventListener("click", noopWindowControl);
-  }
-
-  if (windowMaximizeControl) {
-    windowMaximizeControl.addEventListener("click", noopWindowControl);
-  }
 
   if (explorerClose) {
     explorerClose.addEventListener("click", closeMenu);
   }
+
+  window.addEventListener("resize", syncSidebarForViewport);
+  window.addEventListener("orientationchange", () => {
+    window.setTimeout(syncSidebarForViewport, 120);
+  });
+  syncSidebarForViewport();
 
   if (backToTerminal) {
     backToTerminal.addEventListener("click", () => {
